@@ -1,0 +1,1 @@
+this was a little script to help me determine the radius of a spinning object in a vertical circle attached to an elastic string
