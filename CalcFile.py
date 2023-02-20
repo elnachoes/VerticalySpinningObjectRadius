@@ -20,8 +20,8 @@ for angle in range(0,361):
     b_term = ((spring_constant * top_radius)/2) - ((mass * gravity * sin(radians_angle))/2) - (mass * gravity * sin(radians_angle))
     c_term = ((3/2) * mass * top_radius * gravity) - ((1/2) * pow(top_radius, 2))
 
-    # calculate the length of the string with the quadratic formula
-    quadratic_pos_root = (-(b_term) - sqrt( pow(b_term, 2) - (4 * a_term * c_term ))) / (2 * a_term)
+    # calculate the length of the radius with the quadratic formula
+    radius = (-(b_term) - sqrt( pow(b_term, 2) - (4 * a_term * c_term ))) / (2 * a_term)
 
-    # print out the constants 
-    output_file.write(f"|{angle:7}|{quadratic_pos_root:4.9f}|\n")
+    # print out the angle and radius
+    output_file.write(f"|{angle:7}|{radius:4.9f}|\n")
