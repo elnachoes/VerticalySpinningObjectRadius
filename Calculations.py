@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # constants
-mass = 0.156 #(kilograms)
-spring_constant = 1 #(newtons/meter)
-top_radius = 1 #(meters)
-gravity = 9.81 #(meters/second^2)
+mass = 0.057            # (kilograms)
+spring_constant = 7.8   # (newtons/meter)
+top_radius = 1          # (meters)
+gravity = 9.81          # (meters/second^2)
 
 # open the file, wipe it, and print the top of the table
 output_file = open("results.txt", "w")
@@ -29,7 +29,7 @@ for angle in range(0,361,2):
     # calculate the length of the radius with the quadratic formula
     radius = (-(b_term) - sqrt( pow(b_term, 2) - (4 * a_term * c_term ))) / (2 * a_term)
 
-    # convert from polar coordinates to cartesian
+    # convert from polar coordinates to cartesian coordinates
     x_position = radius * cos(radians_angle)
     y_position = radius * sin(radians_angle)
     x_positions.append(x_position)
@@ -38,7 +38,7 @@ for angle in range(0,361,2):
     # print out the angle and radius
     output_file.write(f"|{angle:7}|{radius:4.9f}|{x_position:4.9f}|{y_position:4.9f}|\n")
 
-# setup the plot
+# setup the plot with matplotlib
 plt.scatter(np.array(x_positions), np.array(y_positions))
 plt.minorticks_on()
 plt.axis("square")
